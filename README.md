@@ -25,10 +25,90 @@ Dokumentasi
 *Kemudian Mengganti Backgorund Menjadi Warna biru, kemudian Menambahkan Teks "Selamat Datang Di Politeknik Negeri Banyuwagi"
 
 *Source Code :
-<img width="574" height="3572" alt="praktikumfiks" src="https://github.com/user-attachments/assets/39ae7582-1112-40a6-bb08-0ce8e65424c4" />
-main.dart
-<img width="574" height="3492" alt="praktikum" src="https://github.com/user-attachments/assets/4a857296-b554-4ebd-8a15-8ee532cc5c68" />
-praktikum.dart
+## main.dart
+import 'package:flutter/material.dart';
+//import 'images_widget.dart';
+import 'praktikum.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.blue,
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center, 
+              crossAxisAlignment: CrossAxisAlignment.center, 
+              children: [
+                Text(
+                  'Selamat Datang Di Politeknik Negeri Banyuwangi',
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 40), 
+                LogoPoliwangi(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+## praktikum.dart
+import 'package:flutter/material.dart';
+
+class LogoPoliwangi extends StatelessWidget {
+  const LogoPoliwangi({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset('images/poliwangi.png', width: 200, height: 200);
+  }
+}
+
+class PraktikumWidget extends StatelessWidget {
+  const PraktikumWidget({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // Tulisan
+        const Padding(
+          padding: EdgeInsets.only(top: 40.0),
+          child: Text(
+            'Selamat Datang di Politeknik Negeri Banyuwangi',
+            style: TextStyle(
+              fontSize: 22,
+              color: Color.fromARGB(255, 253, 253, 253),
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        const SizedBox(height: 24),
+        Image.asset(
+          'images/poliwangi.jpg',
+          width: 120,
+          height: 120,
+        ),
+      ],
+    );
+  }
+}
 
 
